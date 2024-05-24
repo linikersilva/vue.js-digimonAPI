@@ -1,0 +1,152 @@
+[v-cloak] {
+    display: none;
+}
+
+body {
+    font-family: "Comic Sans MS";
+    background-color: #16C29C;
+    margin: 0;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+li {
+    margin: 16px;
+    padding: 8px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.digimon-card {
+    text-align: center;
+}
+
+.digimon-card img {
+    width: 160px;
+    height: 160px;
+}
+
+.digimon-name {
+    font-weight: bold;
+    margin: 10px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 8px;
+    position: relative;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal.visible {
+    display: block;
+}
+
+.search-bar {
+    padding-top: 20px;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.search__btn {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 55px;
+    height: 55px;
+    border-radius: 50px;
+    background-color: #6d6d6d;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 20px #6d6d6d;
+    transition: background-color 0.3s linear,
+    box-shadow 0.3s linear;
+}
+
+.search-container:hover .search__input,
+.search-container:focus-within .search__input {
+    border-color: #ff008b;
+    box-shadow: 0 0 50px #ff008b;
+}
+
+.search-container:hover .search__btn,
+.search-container:focus-within .search__btn {
+    background-color: #ff008b;
+    box-shadow: 0 0 20px #ff008b;
+}
+
+.search__btn-img {
+    display: block;
+    width: 30px;
+}
+
+.search__input {
+    padding: 10px 60px 10px 20px;
+    border: 4px solid #6d6d6d;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    border-radius: 100px;
+    font-size: 18px;
+    outline: none;
+    transition: border-color 0.4s,
+    box-shadow 0.4s;
+}
+
+.fresh { background-color: #7e7e7e }
+.inTraining { background-color: #00aa4c }
+.rookie { background-color: #008ec1 }
+.champion { background-color: #ce59ff }
+.ultimate { background-color: #db9e1c }
+.mega { background-color: #ffd700 }
+.armor { background-color: #000000; color: white }

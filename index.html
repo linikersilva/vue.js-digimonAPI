@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>DigimonTracker - API Digimon</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+<div id="app" v-cloak>
+    <div class="modal" :class="{ visible: modalVisible }">
+        <div class="modal-content">
+            <span class="close" @click="closeModal">&times;</span>
+            <div v-if="selectedDigimon" class="digimon-card">
+                <img :src="selectedDigimon.img" alt="digimon-image">
+                <p class="digimon-name">{{ selectedDigimon.name.toUpperCase() }}</p>
+                <p>{{ selectedDigimon.level }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="search-bar">
+        <div class="search-container">
+            <input type="text" v-model="searchText" placeholder="Procure um digimon..." class="search__input">
+            <button class="search__btn">
+                <img src="search-icon.svg" alt="" class="search__btn-img">
+            </button>
+        </div>
+    </div>
+    <div class="digimon-container">
+        <ul>
+            <li v-for="digimon in filtredDigimons" :key="digimon.name" :class="getLevelClass(digimon.level)" @click="openModal(digimon)">
+                <div class="digimon-card">
+                    <img :src="digimon.img" alt="digimon-image">
+                    <p class="digimon-name">{{digimon.name.toUpperCase()}}</p>
+                    <p>{{digimon.level}}</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <div v-if="loading" >Loading... </div>
+</div>
+</body>
+</html>
+
+<script src="index.js"></script>
